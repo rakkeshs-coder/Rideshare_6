@@ -1,0 +1,6 @@
+## Status as of 2026-10-07 (v0.6.0)
+- Built via GitHub Actions (push from GitHub Desktop -> Releases page -> install RideGrade.apk). Core logic: 85 JUnit-style tests pass locally (Kotlin harness + shim); Android glue type-checked against stubs; first real compile happens on the GitHub build.
+- Shipped since 0.2.0: yellow grade, net profit, $/min, fare ranges, avoid list, history/CSV, voice, prewarmed card, self-check warning, pickup limits, min fare, shift summary, shift mode (listens only while a shift is on; true unsubscribe), Quick Settings tile, privacy-safe diagnostics (redacted samples, no INTERNET permission).
+- 0.6.0 battery: stops listening when the screen is off during a shift; AdaptivePacer (core, tested) = fast reads for 3 s after a new window / 8 s after a ride-like screen, 0.4 s gap after 10 s quiet, 0.8 s gap after 60 s quiet; Settings -> Battery saver (default on); Diagnostics report has a battery line. Real drain is unmeasured until tested on the phone (compare Android Settings -> Battery with saver on/off).
+- Waiting on: first real Diagnostics report from a shift (real Uber/Lyft package IDs + popup text) to tune the parser and implement "read only fare fields by view id".
+- Reference competitor: GigU (co.gigu.app).
